@@ -4,19 +4,19 @@ import android.widget.EditText;
 import android.widget.EditText;
 
 public class Pessoa {
-        private EditText Nome;
+        private String Nome;
         private String sobrenome;
         private String curso;
         private String telefone;
 
-        public Pessoa(EditText Nome, String sobrenome, String curso, String telefone) {
+        public Pessoa(String Nome, String sobrenome, String curso, String telefone) {
             this.Nome = Nome;
             this.sobrenome = sobrenome;
             this.curso = curso;
             this.telefone = telefone;
         }
 
-        public EditText getNome() {
+        public String getNome() {
             return Nome;
         }
 
@@ -32,7 +32,7 @@ public class Pessoa {
             return telefone;
         }
 
-        public void setNome(EditText nome) {
+        public void setNome(String nome) {
             Nome = nome;
         }
 
