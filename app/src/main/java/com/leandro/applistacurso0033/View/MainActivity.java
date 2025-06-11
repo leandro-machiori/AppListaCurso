@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private Button Salvar, Limpar, Finalizar;
     String primeiroNome, sobrenome, curso, telefone;
     Controller controller;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Pessoa pessoa = new Pessoa();
+        controller = new Controller(this);
+
+        controller.Buscar(pessoa);
+        controller.toStrign();
+
         Nome = findViewById(R.id.Nome);
         Sobrenome = findViewById(R.id.Sobrenome);
         Curso = findViewById(R.id.Curso);
@@ -36,16 +45,20 @@ public class MainActivity extends AppCompatActivity {
         Salvar = findViewById(R.id.Salvar);
         Limpar = findViewById(R.id.Limpar);
         Finalizar = findViewById(R.id.Finalizar);
-        controller = new Controller(this);
+
+        Nome.setText(pessoa.getNome());
+        Sobrenome.setText(pessoa.getSobrenome());
+        Curso.setText(pessoa.getCurso());
+        Telefone.setText(pessoa.getTelefone());
+
         // Botão SALVAR
         Salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                primeiroNome = Nome.getText().toString().trim();
-                sobrenome = Sobrenome.getText().toString().trim();
-                curso = Curso.getText().toString().trim();
-                telefone = Telefone.getText().toString().trim();
+                pessoa.setNome(primeiroNome = Nome.getText().toString());
+                pessoa.setSobrenome(sobrenome = Sobrenome.getText().toString());
+                pessoa.setCurso(curso = Curso.getText().toString());
+                pessoa.setTelefone(telefone = Telefone.getText().toString());
                 Pessoa pessoa = new Pessoa(primeiroNome, sobrenome, curso, telefone);
                 controller.Salvar(pessoa);
             }

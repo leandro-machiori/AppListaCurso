@@ -27,10 +27,13 @@ public class Controller {
          editor.commit();
      }
      public Pessoa Buscar(Pessoa pessoa) {
-         pessoa.setNome(sp.getString("Nome", pessoa.getNome()));
-         pessoa.setSobrenome(sp.getString("Sobrenome", pessoa.getSobrenome()));
-         pessoa.setCurso(sp.getString("Curso", pessoa.getCurso()));
-         pessoa.setTelefone(sp.getString("Telefone", pessoa.getTelefone()));
+         pessoa.setNome(sp.getString("Nome", "NA"));
+         pessoa.setSobrenome(sp.getString("Sobrenome", "NA"));
+         pessoa.setCurso(sp.getString("Curso", "NA"));
+         pessoa.setTelefone(sp.getString("Telefone", "NA"));
          return pessoa;
+     }
+     public void toStrign(){
+         Log.d("MVC_Controller", "Controller Iniciado ");
      }
 }
