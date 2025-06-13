@@ -30,7 +30,10 @@ public class Controller {
          pessoa.setNome(sp.getString("Nome", "NA"));
          pessoa.setSobrenome(sp.getString("Sobrenome", "NA"));
          pessoa.setCurso(sp.getString("Curso", "NA"));
-         pessoa.setTelefone(sp.getString("Telefone", "NA"));
+         pessoa.setTelefone(sp.getString("Telefone", "NA"
+
+
+         ));
          return pessoa;
      }
      public void toStrign(){
