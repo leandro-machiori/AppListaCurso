@@ -1,7 +1,10 @@
 package com.leandro.applistacurso0033.View;
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,5 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 finish(); // Encerra o aplicativo
             }
         });
-    }
-}
+
+
+            }
+        }
